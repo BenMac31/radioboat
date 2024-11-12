@@ -38,6 +38,7 @@ const UserRequestID_media_title uint64 = 20000001
 
 func (m *MpvPlayer) Init() (err error) {
 	m.handle = mpv.Create()
+	m.handle.SetOptionString("force-window", "no")
 	err = m.handle.Initialize()
 	if err != nil {
 		return err
